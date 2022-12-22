@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./Notes.module.css";
-import PocketBase from 'pocketbase'
+// import PocketBase from 'pocketbase'
 
 export const dynamic = 'auto',
   dynamicParams = true,
@@ -10,14 +10,14 @@ export const dynamic = 'auto',
   preferredRegion = 'auto'
 
 async function getNotes() {
-	// const res = await fetch(
-	// 	"http://127.0.0.1:8090/api/collections/notes/records?page=1&perPage=30",
-	// 	{ cache: "no-store" }
-	// );
+	const res = await fetch(
+		"http://127.0.0.1:8090/api/collections/notes/records?page=1&perPage=30",
+		{ cache: "no-store" }
+	);
 
 
-  const db = new PocketBase('http://127.0.0.1:8090');
-  const data = await db.records.getList('notes');
+  // const db = new PocketBase('http://127.0.0.1:8090');
+  // const data = await db.records.getList('notes');
 
 	const data = await res.json();
 	return data?.items as any[];
