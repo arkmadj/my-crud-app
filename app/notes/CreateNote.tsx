@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function CreatNote() {
+export default function CreateNote() {
 	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
 
@@ -18,8 +18,8 @@ export default function CreatNote() {
       })
     })
 
-    setContent('')
-    setTitle(' ')
+    // setContent(' ')
+    // setTitle(' ')
   }
 
 	return (
