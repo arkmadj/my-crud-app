@@ -1,4 +1,4 @@
-import styles from '../Notes.module.css';
+import styles from "../Notes.module.css";
 
 async function getNote(noteId: string) {
 	const res = await fetch(
@@ -8,10 +8,10 @@ async function getNote(noteId: string) {
 		}
 	);
 	const data = await res.json();
-	return data
+	return data;
 }
 
-export const NotePage = async ({ params }: any) => {
+export default async function NotePage({ params }: any) {
 	const note = await getNote(params.id);
 
 	return (
@@ -24,4 +24,4 @@ export const NotePage = async ({ params }: any) => {
 			</div>
 		</div>
 	);
-};
+}
