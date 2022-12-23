@@ -1,6 +1,6 @@
 import styles from "../Notes.module.css";
 
-async function getNote(noteId: string) {
+async function getNote(id: string) {
 	const res = await fetch(
 		`http://127.0.0.1:8090/api/collections/notes/records/${id}`,
 		{
